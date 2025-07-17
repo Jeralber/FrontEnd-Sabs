@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import { FaUser, FaUserCog, FaUserCheck, FaUserEdit, FaFilePdf, FaChartBar } from "react-icons/fa";
+import { FaUser, FaUserCog, FaUserCheck, FaUserEdit, FaFilePdf} from "react-icons/fa";
 import DetallesPDF from './DetallesPDF';
 import { Models } from '../../types/types';
 

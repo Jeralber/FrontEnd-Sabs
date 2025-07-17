@@ -45,17 +45,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   // En la función login del contexto
-  const login = async (correo: string, contrasena: string) => {
-    try {
-      const success = await authService.login(correo, contrasena);
-      if (success) {
-        const currentUser = authService.getCurrentUser();
-        console.log('Usuario después del login:', currentUser);
-        setUser(currentUser);
-      }
-      return success;
-    } catch (error) {
-      console.error('Error en login:', error);
+  const login = async (email: string, password: string): Promise<boolean> => {
+    // Aquí va tu lógica de autenticación
+    // Supongamos que tienes una función que valida el usuario:
+    const user = await authService.login(email, password);
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+      // ...otros estados...
+      return true;
+    } else {
       return false;
     }
   };

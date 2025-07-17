@@ -52,7 +52,7 @@ export function DataTable<T extends { [key: string]: any }>({
   }, [data]);
 
   // Función para manejar el ordenamiento
-  const handleSort = (key: keyof T, isDate?: boolean) => {
+  const handleSort = (key: keyof T) => {
     setSortConfig(prevConfig => ({
       key,
       direction: prevConfig.key === key && prevConfig.direction === 'asc' ? 'desc' : 'asc'
@@ -177,7 +177,7 @@ export function DataTable<T extends { [key: string]: any }>({
                   className={`px-6 py-3 text-left text-sm font-medium text-gray-600 ${
                     col.sortable !== false ? 'cursor-pointer select-none' : ''
                   }`}
-                  onClick={() => col.sortable !== false && handleSort(col.accessorKey, col.isDate)}
+                  onClick={() => col.sortable !== false && handleSort(col.accessorKey)}
                 >
                   <div className="flex items-center space-x-1">
                     <span>{col.header}</span>

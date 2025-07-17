@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "@heroui/react";
 import { FaFileAlt, FaUser, FaClipboard, FaGraduationCap, FaBuilding, FaUniversity, FaChartBar, FaMapMarkerAlt, FaExchangeAlt, FaBox, FaListAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Boton from "../components/boton";
  
 // Definimos interfaces para nuestros tipos
 interface Modulo {
@@ -34,6 +35,8 @@ const ReportesPage: React.FC = () => {
       <p className="mb-6 text-gray-600">
         Selecciona un módulo para generar un reporte detallado.
       </p>
+// el boton que pide el inge 
+       <Boton hola="Diego"/>
 
       {/* Grid de tarjetas de módulos */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

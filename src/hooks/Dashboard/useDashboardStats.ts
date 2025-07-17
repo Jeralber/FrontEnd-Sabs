@@ -19,7 +19,7 @@ const fetchPersonas = async () => {
     const response = await api.get('/api/personas');
     return {
       count: response.data.length || 0,
-      increase: calculateIncrease(response.data)
+      increase: calculateIncrease()
     };
   } catch (error) {
     console.error('Error al obtener personas:', error);
@@ -35,7 +35,7 @@ const fetchFichas = async () => {
     const response = await api.get('/api/fichas');
     return {
       count: response.data.length || 0,
-      increase: calculateIncrease(response.data)
+      increase: calculateIncrease()
     };
   } catch (error) {
     console.error('Error al obtener fichas:', error);
@@ -51,7 +51,7 @@ const fetchMateriales = async () => {
     const response = await api.get('/api/materiales');
     return {
       count: response.data.length || 0,
-      increase: calculateIncrease(response.data)
+      increase: calculateIncrease()
     };
   } catch (error) {
     console.error('Error al obtener materiales:', error);
@@ -67,7 +67,7 @@ const fetchTitulados = async () => {
     const response = await api.get('/api/titulados');
     return {
       count: response.data.length || 0,
-      increase: calculateIncrease(response.data)
+      increase: calculateIncrease()
     };
   } catch (error) {
     console.error('Error al obtener titulados:', error);
@@ -78,7 +78,7 @@ const fetchTitulados = async () => {
   }
 };
 
-const calculateIncrease = (data: any[]) => {
+const calculateIncrease = () => {
   return Math.floor(Math.random() * 30) - 10;
 };
 
